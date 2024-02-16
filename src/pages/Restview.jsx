@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux';
 
 
 function Restview() {
-  const {id}=useParams();
-  console.log("===id===",id);
-  const allRestaurant=useSelector(state=>state.restaurantSlice.allRestaurant);
-  const selectedRestaurant=allRestaurant?.filter(item=>item.id==id)
+  const { id } = useParams();
+  console.log("===id===", id);
+  const allRestaurant = useSelector(state => state.restaurantSlice.allRestaurant);
+  const selectedRestaurant = allRestaurant?.filter(item => item.id == id)
   console.log(selectedRestaurant);
 
   const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ function Restview() {
             <ListGroup.Item>Address: <span className='ms-3 text-primary'>{selectedRestaurant[0]?.address}</span></ListGroup.Item>
             <ListGroup.Item className='text-center p-3 mb-2'>
               <button className='btn btn-warning me-3' onClick={handleShow}>Operating Hours</button>
-              <Restreview selectedRestaurant={selectedRestaurant[0]}/>
+              <Restreview />
             </ListGroup.Item>
           </ListGroup>
         </Col>

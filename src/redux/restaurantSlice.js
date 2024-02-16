@@ -28,7 +28,7 @@ const restaurantSlice = createSlice({
         })
         builder.addCase(fetchRestaurant.fulfilled, (state, action) => {
             state.allRestaurant = action.payload;
-            state.searchRestaurent=action.payload
+            state.searchRestaurent=action.payload;
             state.loading = false;
             state.error = "";
         })
@@ -40,7 +40,7 @@ const restaurantSlice = createSlice({
     },
     reducers: {
         search: (state, action) => {
-            state.allRestaurant = state.allRestaurant.filter(item => item.neighborhood.toLowerCase().includes(action.payload))
+            state.allRestaurant = state.searchRestaurent.filter(item => item.neighborhood.toLowerCase().includes(action.payload))
         }
     }
 })
